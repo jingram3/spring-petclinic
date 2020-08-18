@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'benhall/dind-jenkins-agent'
+    }
+
+  }
   stages {
     stage('Build') {
       steps {
